@@ -14,6 +14,13 @@ namespace WindowsFormsApp1
 
     public partial class Form1 : Form
     {
+        private TextBox listaAlumnos;
+        private TextBox aluNombre;
+        private TextBox aluNota;
+        private Button button1;
+        private Label label1;
+        private Label label2;
+        private Label label3;
         Alumnos misAlumnos = new Alumnos();
 
         public Form1()
@@ -28,15 +35,116 @@ namespace WindowsFormsApp1
 
             miAlumno.Nombre = aluNombre.Text;
             miAlumno.Nota = Convert.ToInt32(aluNota.Text);
-            miAlumnoStr = aluNombre.Text + " " + aluNota.Text + (miAlumno.Aprobado ? " Aprobado" : " Suspenso")+"\n";
+            miAlumnoStr = aluNombre.Text + " " + aluNota.Text + (miAlumno.Aprobado ? " Aprobado" : " Suspenso") + "\n";
+            listaAlumnos.AppendText(miAlumnoStr);
+            misAlumnos.Agregar(miAlumno);
+        }
+
+        private void InitializeComponent()
+        {
+            this.listaAlumnos = new System.Windows.Forms.TextBox();
+            this.aluNombre = new System.Windows.Forms.TextBox();
+            this.aluNota = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // listaAlumnos
+            // 
+            this.listaAlumnos.AccessibleDescription = "";
+            this.listaAlumnos.AccessibleName = "";
+            this.listaAlumnos.Location = new System.Drawing.Point(34, 96);
+            this.listaAlumnos.Multiline = true;
+            this.listaAlumnos.Name = "listaAlumnos";
+            this.listaAlumnos.ReadOnly = true;
+            this.listaAlumnos.Size = new System.Drawing.Size(757, 273);
+            this.listaAlumnos.TabIndex = 4;
+            // 
+            // aluNombre
+            // 
+            this.aluNombre.Location = new System.Drawing.Point(34, 58);
+            this.aluNombre.Name = "aluNombre";
+            this.aluNombre.Size = new System.Drawing.Size(441, 20);
+            this.aluNombre.TabIndex = 5;
+            // 
+            // aluNota
+            // 
+            this.aluNota.Location = new System.Drawing.Point(494, 58);
+            this.aluNota.Name = "aluNota";
+            this.aluNota.Size = new System.Drawing.Size(100, 20);
+            this.aluNota.TabIndex = 6;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(671, 55);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Guardar Alumnos";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(31, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Nombre Alumno";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(500, 42);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Notas ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(31, 81);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(72, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Lista Alumnos";
+            // 
+            // Form1
+            // 
+            this.ClientSize = new System.Drawing.Size(930, 381);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.aluNota);
+            this.Controls.Add(this.aluNombre);
+            this.Controls.Add(this.listaAlumnos);
+            this.Name = "Form1";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Alumno miAlumno = new Alumno();
+            String miAlumnoStr;
+
+            miAlumno.Nombre = aluNombre.Text;
+            miAlumno.Nota = Convert.ToInt32(aluNota.Text);
+            miAlumnoStr = aluNombre.Text + " " + aluNota.Text + (miAlumno.Aprobado ? " Aprobado" : " Suspenso") + "\n";
             listaAlumnos.AppendText(miAlumnoStr);
             misAlumnos.Agregar(miAlumno);
         }
     }
 
 
-    
-    
+
+
     class Alumno
     {
         private string nombre;
