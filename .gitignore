@@ -3,3 +3,6 @@
 ################################################################################
 
 /WindowsFormsApp1/.vs/WindowsFormsApp1/v15/Server/sqlite3/storage.ide
+/WindowsFormsApp1/.vs/WindowsFormsApp1/v15/Server/sqlite3/storage.ide-shm
+/WindowsFormsApp1/.vs/WindowsFormsApp1/v15/Server/sqlite3/storage.ide-wal
+*.lock

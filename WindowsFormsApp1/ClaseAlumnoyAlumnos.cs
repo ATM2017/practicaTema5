@@ -21,6 +21,7 @@ namespace WindowsFormsApp1
         private Label label1;
         private Label label2;
         private Label label3;
+        private Label label4;
         Alumnos misAlumnos = new Alumnos();
 
         public Form1()
@@ -49,6 +50,7 @@ namespace WindowsFormsApp1
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listaAlumnos
@@ -113,9 +115,20 @@ namespace WindowsFormsApp1
             this.label3.TabIndex = 10;
             this.label3.Text = "Lista Alumnos";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(205, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(217, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Cambios echos desde la cuenta ATM2017-2";
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(930, 381);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
